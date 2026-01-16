@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data files
+*.csv
+
+# Node / frontend junk (safety)
+node_modules/
+
+# Optional model files (comment out if you want to upload them)
+# *.pt
