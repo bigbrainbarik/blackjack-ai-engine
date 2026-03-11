@@ -153,7 +153,7 @@ def _show_animated_cards(hand: Hand, hide_second: bool = False,
         total_text=total_text,
     )
     card_h = int(cw * 1.4)
-    iframe_h = card_h + 70  # single row + label + total text
+    iframe_h = card_h + 85  # single row + label + total text
     components.html(html, height=iframe_h, scrolling=False)
 
 def _show_chip_stack(amount: int):
