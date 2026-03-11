@@ -2,24 +2,39 @@
 __pycache__/
 *.pyc
 *.pyo
+*.egg-info/
+dist/
+build/
 
 # Virtual environments
 .venv/
 venv/
+env/
 
 # IDEs
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # OS files
 .DS_Store
 Thumbs.db
+Desktop.ini
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
 
 # Data files
 *.csv
 
-# Node / frontend junk (safety)
-node_modules/
+# Environment variables
+.env
 
-# Optional model files (comment out if you want to upload them)
-# *.pt
+# Logs
+*.log
+
+# Node (safety)
+node_modules/

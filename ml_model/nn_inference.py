@@ -71,3 +71,30 @@ def predict_action(
         predicted_index = torch.argmax(logits, dim=1).item()
 
     return action_labels[predicted_index]
+
+
+def predict_action_with_confidence(
+    dealer_up,
+    player_total,
+    run_count,
+    true_count,
+    cards_remaining
+):
+    """
+    Returns (action, confidence_dict).
+    action: one of 'H', 'S', 'P', 'D'
+    confidence_dict: {label: probability} for each action
+    """
+    features = torch.tensor(
+        [[dealer_up, player_total, run_count, true_count, cards_remaining]],
+        dtype=torch.float32,
+    ).to(DEVICE)
+
+    with torch.no_grad():
+        logits = model(features)
+        probs = torch.softmax(logits, dim=1).squeeze()
+        predicted_index = torch.argmax(probs).item()
+
+    action = action_labels[predicted_index]
+    confidence = {action_labels[i]: round(probs[i].item(), 4) for i in range(len(action_labels))}
+    return action, confidence
