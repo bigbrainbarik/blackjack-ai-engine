@@ -537,14 +537,8 @@ elif S.phase in ("idle", "betting"):
             # Show chip stack preview
             _show_chip_stack(bet_val)
 
-    bc1, bc2 = st.columns([1, 3])
-    with bc1:
-        st.button("🃏 Deal", on_click=cb_deal, type="primary",
-                  use_container_width=True, key="btn_deal")
-    with bc2:
-        if S.history:
-            if st.button("📈 View Full Analytics", key="footer_analytics_bet"):
-                st.switch_page("pages/1_Analytics.py")
+    st.button("🃏 Deal", on_click=cb_deal, type="primary",
+              use_container_width=False, key="btn_deal")
 
 # ──────────────────────────────────────
 # PLAYING PHASE
