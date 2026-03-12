@@ -323,6 +323,8 @@ with st.sidebar:
         st.switch_page("pages/1_Analytics.py")
     if st.button("📖 Tutorial", use_container_width=True, key="nav_tutorial"):
         st.switch_page("pages/2_Tutorial.py")
+    if st.button("🎯 Strategy Advisor", use_container_width=True, key="nav_advisor"):
+        st.switch_page("pages/3_Strategy_Advisor.py")
     st.divider()
     st.header("🤖 AI Advisory Panel")
     st.divider()
@@ -537,8 +539,10 @@ elif S.phase in ("idle", "betting"):
             # Show chip stack preview
             _show_chip_stack(bet_val)
 
-    st.button("🃏 Deal", on_click=cb_deal, type="primary",
-              use_container_width=False, key="btn_deal")
+    _, center_deal, _ = st.columns([1, 1, 1])
+    with center_deal:
+        st.button("🃏 Deal", on_click=cb_deal, type="primary",
+                  use_container_width=True, key="btn_deal")
 
 # ──────────────────────────────────────
 # PLAYING PHASE
@@ -650,7 +654,10 @@ elif S.phase == "result":
         else:
             st.write("Bet returned.")
 
-    st.button("🃏 Next Round", on_click=cb_next_round, type="primary", key="btn_next")
+    _, center_next, _ = st.columns([1, 1, 1])
+    with center_next:
+        st.button("🃏 Next Round", on_click=cb_next_round, type="primary",
+                  use_container_width=True, key="btn_next")
 
 # ──────────────────────────────────────
 # Footer link to analytics
