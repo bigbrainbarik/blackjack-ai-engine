@@ -28,6 +28,8 @@ with st.sidebar:
         st.switch_page("pages/1_Analytics.py")
     if st.button("📖 Tutorial", use_container_width=True, key="nav_tutorial"):
         st.switch_page("pages/2_Tutorial.py")
+    if st.button("🎯 Strategy Advisor", use_container_width=True, key="nav_advisor"):
+        st.switch_page("pages/3_Strategy_Advisor.py")
 
 # ─── Section 1: Rules ────────────────────────────────────────
 with st.expander("1 · Rules of Blackjack", expanded=True):
