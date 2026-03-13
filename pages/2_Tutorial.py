@@ -24,12 +24,12 @@ st.caption("An interactive guide to the game, strategy systems, and the AI engin
 with st.sidebar:
     if st.button("🏠 Home", use_container_width=True, key="nav_home"):
         st.switch_page("streamlit_app.py")
+    if st.button("🎯 Strategy Advisor", use_container_width=True, key="nav_advisor"):
+        st.switch_page("pages/3_Strategy_Advisor.py")
     if st.button("📈 Session Analytics", use_container_width=True, key="nav_analytics"):
         st.switch_page("pages/1_Analytics.py")
     if st.button("📖 Tutorial", use_container_width=True, key="nav_tutorial"):
         st.switch_page("pages/2_Tutorial.py")
-    if st.button("🎯 Strategy Advisor", use_container_width=True, key="nav_advisor"):
-        st.switch_page("pages/3_Strategy_Advisor.py")
 
 # ─── Section 1: Rules ────────────────────────────────────────
 with st.expander("1 · Rules of Blackjack", expanded=True):
